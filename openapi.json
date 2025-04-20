@@ -1,0 +1,59 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SendGrid Email Sender",
+    "version": "v1.0.0",
+    "description": "Sends evaluation reports via SendGrid from a verified email address."
+  },
+  "servers": [
+    {
+      "url": "https://6afae748-9239-46ea-ba9b-d01d16dbb1f8-00-k66t030r1msx.kirk.replit.dev"
+    }
+  ],
+  "paths": {
+    "/send-email": {
+      "post": {
+        "operationId": "sendEmail",
+        "summary": "Send an evaluation report email",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "recipientEmail": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "subject": {
+                    "type": "string",
+                    "default": "Evaluation Report"
+                  },
+                  "reportContent": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "recipientEmail",
+                  "reportContent"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Email sent successfully"
+          },
+          "400": {
+            "description": "Missing required fields or bad input"
+          },
+          "500": {
+            "description": "Failed to send email via SendGrid"
+          }
+        }
+      }
+    }
+  }
+}
