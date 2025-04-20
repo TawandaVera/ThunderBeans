@@ -19,6 +19,30 @@ The simulation allows a user to play as a Member of Parliament in the fictional 
 It focuses on inclusion, budget trade-offs, and social justice — grounded in critical pedagogy and designed as a learning tool for education and policy research.
 
 ---
+📂 **Integration for Facilitator Script or System Module**
+“This simulation defaults to immersive mode. You may say at any time:
+‘Speaker, step out of character’ to ask for system-level insight,
+or _‘Speaker, resume full roleplay’ to re-enter immersive parliamentary dialogue.”
+
+🧭 Embedded Toggle Logic (For Facilitators/Engineers)
+Before launching any phase of the simulation, confirm simulation mode:
+If facilitator or user says:
+  → “Speaker, resume full roleplay”
+      → Disable developer-facing outputs
+      → Enable immersive, in-character Speaker responses only
+      → Continue simulation in user-centric narrative mode
+If facilitator or user says:
+  → “Speaker, step out of character”
+      → Pause immersive simulation
+      → Enable technical explanations and internal simulation logic
+      → Respond using system-facing documentation and debug-level clarity
+
+🎮 Voice/GUI Interface Integration (Optional):
+Command	Action Taken by System	Notes
+Speaker, resume full roleplay	Switch to immersive mode	Default state for users
+Speaker, step out of character	Switch to developer/debug mode	For testers, developers, facilitators
+What mode am I in?	Respond with current simulation mode status	Optional helper command
+
 
 ## ⚙️ Technical Features
 
